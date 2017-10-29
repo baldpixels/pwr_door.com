@@ -1,0 +1,70 @@
+@charset "UTF-8";
+/* CSS Document */
+html {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-image: url('BG_images/cyberpunk_solo.gif');
+	background-repeat: repeat;
+ 	background-attachment: fixed;
+ 	background-size: 100%;
+}
+
+#container {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	overflow: scroll;
+	font-family: 'VT323', monospace;
+
+}
+
+header {
+	background-color: #000;
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+	font-style: italic;
+	color: #00cc00;
+}
+
+footer {
+	color: #4d033a;
+	background: inherit;
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+	font-family: 'VT323', monospace;
+	text-align: center;
+	font-size: 18px;
+	margin: 0;
+	padding: .2em;
+	box-shadow: inset 0 0 0 500px rgba(0,204,0,0.3);
+}
+footer a {
+
+}
+footer:hover {
+}
+
+#footer {
+	color: #4d033a;
+	background: inherit;
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+	text-align: center;
+	font-size: 18px;
+	margin: 0;
+	padding: .2em;
+	box-shadow: inset 0 0 0 500px rgba(0,204,0,0.3);
+}
+#footer:hover {
+
+}

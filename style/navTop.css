@@ -1,0 +1,166 @@
+@charset "UTF-8";
+/* CSS Document */
+
+#logoTop {
+	width: 25%;
+	position: absolute;
+	top: 20%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	max-height: 320px;
+	max-width: 300px;
+	-webkit-filter: blur(2px);
+       -moz-filter: blur(2px);
+        -ms-filter: blur(2px);
+         -o-filter: blur(2px);
+            filter: blur(2px);
+    -webkit-transition: all 2s 2s linear;
+       -moz-transition: all 2s 2s linear;
+        -ms-transition: all 2s 2s linear;
+         -o-transition: all 2s 2s linear;
+            transition: all 2s 2s linear;
+}
+#logoTop:hover {
+	-webkit-filter: blur(0px);
+       -moz-filter: blur(0px);
+        -ms-filter: blur(0px);
+         -o-filter: blur(0px);
+            filter: blur(0px);
+    -webkit-transition: all 0.2s linear;
+       -moz-transition: all 0.2s linear;
+        -ms-transition: all 0.2s linear;
+         -o-transition: all 0.2s linear;
+            transition: all 0.2s linear;
+}
+
+#leftNav {
+ position: absolute;
+	top: 25%;
+	left: 15%;
+ height:auto;
+	width: 25%;
+	transform: translate(0, -50%);
+	max-height: auto;
+	max-width: 150px;
+	-webkit-filter: blur(2px);
+       -moz-filter: blur(2px);
+        -ms-filter: blur(2px);
+         -o-filter: blur(2px);
+            filter: blur(2px);
+    -webkit-transition: all 1s linear;
+       -moz-transition: all 1s linear;
+        -ms-transition: all 1s linear;
+         -o-transition: all 1s linear;
+            transition: all 1s linear;
+}
+#leftNav:hover {
+	-webkit-filter: blur(1px);
+       -moz-filter: blur(1px);
+        -ms-filter: blur(1px);
+         -o-filter: blur(1px);
+            filter: blur(1px);
+    -webkit-transition: all .1s linear;
+       -moz-transition: all .1s linear;
+        -ms-transition: all .1s linear;
+         -o-transition: all .1s linear;
+            transition: all .1s linear;
+}
+
+#topNav {
+ position: absolute;
+	top: 10%;
+	left: 15%;
+	width: 25%;
+ height:auto;
+	transform: translate(0, -50%);
+	max-height: auto;
+	max-width: 150px;
+	-webkit-filter: blur(2px);
+       -moz-filter: blur(2px);
+        -ms-filter: blur(2px);
+         -o-filter: blur(2px);
+            filter: blur(2px);
+    -webkit-transition: all 1s linear;
+       -moz-transition: all 1s linear;
+        -ms-transition: all 1s linear;
+         -o-transition: all 1s linear;
+            transition: all 1s linear;
+}
+#topNav:hover {
+	-webkit-filter: blur(1px);
+       -moz-filter: blur(1px);
+        -ms-filter: blur(1px);
+         -o-filter: blur(1px);
+            filter: blur(1px);
+    -webkit-transition: all .1s linear;
+       -moz-transition: all .1s linear;
+        -ms-transition: all .1s linear;
+         -o-transition: all .1s linear;
+            transition: all .1s linear;
+}
+
+#rightNav {
+ position: absolute;
+	top: 10%;
+	right: 15%;
+	width: 25%;
+ height:auto;
+	transform: translate(0, -50%);
+	max-height: auto;
+	max-width: 150px;
+	-webkit-filter: blur(2px);
+       -moz-filter: blur(2px);
+        -ms-filter: blur(2px);
+         -o-filter: blur(2px);
+            filter: blur(2px);
+    -webkit-transition: all 1s linear;
+       -moz-transition: all 1s linear;
+        -ms-transition: all 1s linear;
+         -o-transition: all 1s linear;
+            transition: all 1s linear;
+}
+#rightNav:hover {
+	-webkit-filter: blur(1px);
+       -moz-filter: blur(1px);
+        -ms-filter: blur(1px);
+         -o-filter: blur(1px);
+            filter: blur(1px);
+    -webkit-transition: all 0.1s linear;
+       -moz-transition: all 0.1s linear;
+        -ms-transition: all 0.1s linear;
+         -o-transition: all 0.1s linear;
+            transition: all 0.1s linear;
+}
+
+#bottomNav {
+ position: absolute;
+	top: 25%;
+	right: 15%;
+	width: 25%;
+ height:auto;
+	transform: translate(0, -50%);
+	max-height: auto;
+	max-width: 150px;
+	-webkit-filter: blur(2px);
+       -moz-filter: blur(2px);
+        -ms-filter: blur(2px);
+         -o-filter: blur(2px);
+            filter: blur(2px);
+    -webkit-transition: all 1s linear;
+       -moz-transition: all 1s linear;
+        -ms-transition: all 1s linear;
+         -o-transition: all 1s linear;
+            transition: all 1s linear;
+}
+#bottomNav:hover {
+	-webkit-filter: blur(1px);
+       -moz-filter: blur(1px);
+        -ms-filter: blur(1px);
+         -o-filter: blur(1px);
+            filter: blur(1px);
+    -webkit-transition: all 0.1s linear;
+       -moz-transition: all 0.1s linear;
+        -ms-transition: all 0.1s linear;
+         -o-transition: all 0.1s linear;
+            transition: all 0.1s linear;
+}
