@@ -22,7 +22,7 @@
 			<main> <!--absolute position-->
 				<section>
 					<script src="functions/js_mediaFunctions.js"></script>
-					<button type="button" class="randomButton" onclick="self.location='graphics.php'">random graphic</button>
+					<button type="button" class="randomButton" onclick="self.location='graphics.php'">[random graphic]</button>
 					<article class="randomMedia">
 						<?php include 'randomGraphic.php';?>
 						<div class="caption">
@@ -31,7 +31,7 @@
 							</a>
 						</div>
 					</article>
-					<button type="button" class="randomButton" onclick="self.location='graphics.php'">another one.</button>
+					<button type="button" class="randomButton" onclick="self.location='graphics.php'">[another one please]</button>
 				</section>
 			</main>
 

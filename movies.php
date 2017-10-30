@@ -7,7 +7,7 @@
 		<link rel="stylesheet" type="text/css" href="style/navTop.css">
 		<link rel="stylesheet" type="text/css" href="style/content.css">
 		<?php include 'style/fonts.php';?>
-		<title>pwrdoor off</title>
+		<title>PWR DOOR OFF</title>
 	</head>
 
 	<body>
@@ -22,7 +22,7 @@
 			<main> <!--absolute position-->
 				<section>
 					<script src="functions/js_mediaFunctions.js"></script>
-					<button type="button" class="randomButton" onclick="self.location='movies.php'">random movie</button>
+					<button type="button" class="randomButton" onclick="self.location='movies.php'">[random movie]</button>
 					<article class="randomMedia">
 						<?php include 'randomMovie.php';?>
 						<div class="caption">
@@ -31,7 +31,7 @@
 							</a>
 						</div>
 					</article>
-					<button type="button" class="randomButton" onclick="self.location='movies.php'">another one.</button>
+					<button type="button" class="randomButton" onclick="self.location='movies.php'">[another one]</button>
 				</section>
 			</main>
 

@@ -6,6 +6,7 @@
 		<?php include 'style/cssLinks.php';?>
 		<link rel="stylesheet" type="text/css" href="style/navTop.css">
 		<link rel="stylesheet" type="text/css" href="style/content.css">
+		<link rel="stylesheet" type="text/css" href="style/u.rand().css">
 		<?php include 'style/fonts.php';?>
 		<title>pwrdoor off</title>
 	</head>
@@ -21,11 +22,25 @@
 
 			<main> <!--absolute position-->
 				<section>
-					You are random nothingness.
+					<article>
+						<div id="terminal">
+							<div class="text">
+								> You were born just now...
+							</div>
+							<div class="instruction">
+								[click 'i']
+							</div>
+							<div class="text">
+								> At TIME you will die.
+							</div>
+							<div class="instruction">
+								[click 'i']
+							</div>
+						</div>
+					</article>
 				</section>
 			</main>
 
-			<div id="footer"><?php include 'footer.php';?></div> <!--absolute position-->
 		</div>
 
 	</body>

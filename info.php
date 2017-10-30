@@ -21,7 +21,12 @@
 
 			<main> <!--absolute position-->
 				<section>
-					
+					<article>
+						<div class="info">
+							<p>STAFF: Connor Rudmann</p>
+							<p>EMAIL: baldpixels@gmail.com</p>
+						</div>
+					</article>
 				</section>
 			</main>
 

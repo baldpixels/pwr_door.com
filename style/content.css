@@ -20,6 +20,23 @@ section {
 article {
 }
 
+.info {
+	background: inherit;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+	padding: 1em;
+	text-align: center;
+	font-size: 18px;
+	color: #4d033a;
+	border-radius: 30px;
+	box-shadow: inset 0 0 0 500px rgba(0,204,0,0.5);
+}
+.info p {
+	margin: none;
+	padding: none;
+}
+
 .randomMedia {
 	background: inherit;
 	margin-left: auto;
@@ -27,9 +44,8 @@ article {
 	width: 50%;
 	padding: 1em;
 	text-align: center;
-	border: 3px #fff;
 	border-radius: 30px;
-	box-shadow: inset 0 0 0 500px rgba(0,204,0,0.3);
+	box-shadow: inset 0 0 0 500px rgba(0,204,0,0.5);
 }
 .randomMedia:hover {
 
@@ -38,14 +54,14 @@ article {
 .randomButton {
 	margin: 2em;
 	padding: .5em;
-	width: 35%;
+	width: 33%;
 	background: inherit;
 	color: #00cc00;
-	font-size: 24px;
+	font-size: 20px;
 	font-family: 'VT323', monospace;
 	font-weight: bold;
 	border-radius: 30px;
-	border-width: 5px;
+	border-width: 3px;
 	border-color: #00cc00;
 	box-shadow: inset 0 0 0 500px rgba(0,204,0,0.3);
 }
@@ -67,7 +83,7 @@ article {
 
 .caption {
 	width: 75%;
-	background-color: #fff;
+	background: inherit;
 	margin-left: auto;
 	margin-right: auto;
 	padding: 0;
@@ -76,7 +92,8 @@ article {
 	border-style: double;
 	border-radius: 4px;
 	border-color: #ba068c;
-	border-width: .1px;
+	border-width: 1px;
+	box-shadow: inset 0 0 0 500px rgba(255,255,255,0.5);
 
 }
 .caption a {
