@@ -6,20 +6,51 @@
 	text-align: left;
   width: 50%;
   height: 400px;
-	border-radius: 30px;
+	border-radius: 0px 0px 30px 30px;
 	box-shadow: inset 0 0 0 1000px rgba(0,204,0,0.5);
 }
 
-.text {
-  color: #4d033a;
-  font-size: 28px;
-  margin: 10px;
+#terminalHead {
+  margin-left: auto;
+	margin-right: auto;
+  background-color: #000;
+  color: #00cc00;
+  font-size: 18px;
+	padding: 10px;
+  width: 50%;
+  height: 20px;
+}
+.leftText {
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+#time {
+  float: right;
+  margin: 0;
+  padding: 0;
 }
 
-.instruction {
+#termLine {
+  margin: 5px;
+  padding: 0;
+  color: #4d033a;
+  font-size: 24px;
+}
+
+#terminal button {
+  margin: 5px;
+  font-family: 'VT323', monospace;
+  font-size: 18px;
+  background: inherit;
+  color: #00cc00;
+  border-color: #00cc00;
+  border-radius: 5px;
+}
+
+.terminalIn {
+  margin: 10px;
+  padding: 0;
   color: #00cc00;
   font-size: 20px;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
 }

@@ -8,7 +8,7 @@
 		<link rel="stylesheet" type="text/css" href="style/content.css">
 		<link rel="stylesheet" type="text/css" href="style/u.rand().css">
 		<?php include 'style/fonts.php';?>
-		<title>pwrdoor off</title>
+		<title>u.rand()</title>
 	</head>
 
 	<body>
@@ -23,19 +23,14 @@
 			<main> <!--absolute position-->
 				<section>
 					<article>
+						<div id="terminalHead">
+							<p class="leftText">u.rand()</p>
+							<p id="time"></p>
+						</div>
 						<div id="terminal">
-							<div class="text">
-								> You were born just now...
-							</div>
-							<div class="instruction">
-								[click 'i']
-							</div>
-							<div class="text">
-								> At TIME you will die.
-							</div>
-							<div class="instruction">
-								[click 'i']
-							</div>
+							<p id="termLine"></p>
+							<button onclick="buttonPush()">ok</button>
+							<script src="u.rand()/terminal.js"></script>
 						</div>
 					</article>
 				</section>

@@ -2,29 +2,42 @@
 
 // this code works the modern way
 
-var Game = new function(strategy) {
-    this.strategy = strategy;
-}
+var startTime = new Date();
+var endTime = new Date(startTime.getTime() + 5*60000);
 
-Game.prototyp.playScene = function() {
-    return this.strategy();
-}
-
-var sceneOne = function() {
-    console.log('First scene logic here');
-}
-
-var sceneTwo = function() {
-    console.log('Second scene logic here');
-}
-
-var game;
-if(e.which == 13) {
-    if(condition1) {
-        game = new Game(sceneOne);
-    } else {
-        game = new Game(sceneTwo);
+function updateTime() {
+    var currentTime = new Date()
+    if(currentTime == endTime) {
+      dead();
     }
-
-    game.playScene();
+    else {
+      var hours = currentTime.getHours()
+      var minutes = currentTime.getMinutes()
+      if (minutes < 10){
+          minutes = "0" + minutes
+      }
+      var t_str = hours + ":" + minutes + " ";
+      document.getElementById('time').innerHTML = "Current Time = " + t_str;
+    }
 }
+setInterval(updateTime, 1000);
+
+function dead() {
+  document.innerHTML = "";
+}
+
+function buttonPush() {
+  document.getElementById('termLine').innerHTML = termLineContent;
+}
+
+var termLineContent = ": Just now, u were born."
+
+document.getElementById('termLine').innerHTML = termLineContent;
+
+var endHours = endTime.getHours()
+var endMinutes = endTime.getMinutes()
+if (endMinutes < 10){
+    endMinutes = "0" + minutes
+}
+var et_str = endHours + ":" + endMinutes + " ";
+termLineContent = ": At " + et_str + " u will die.";
