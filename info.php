@@ -7,7 +7,7 @@
 		<link rel="stylesheet" type="text/css" href="style/navTop.css">
 		<link rel="stylesheet" type="text/css" href="style/content.css">
 		<?php include 'style/fonts.php';?>
-		<title>pwrdoor off</title>
+		<title>PWR DOOR info</title>
 	</head>
 
 	<body>

@@ -29,7 +29,7 @@
 						</div>
 						<div id="terminal">
 							<p id="termLine"></p>
-							<button onclick="buttonPush()">ok</button>
+							<button onclick="buttonPush()">: ok</button>
 							<script src="u.rand()/terminal.js"></script>
 						</div>
 					</article>

@@ -23,7 +23,7 @@ function updateTime() {
 setInterval(updateTime, 1000);
 
 function dead() {
-  document.innerHTML = "";
+  document.innerHTML = "u are dead.";
 }
 
 function buttonPush() {

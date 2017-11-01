@@ -7,7 +7,7 @@
 		<link rel="stylesheet" type="text/css" href="style/navTop.css">
 		<link rel="stylesheet" type="text/css" href="style/content.css">
 		<?php include 'style/fonts.php';?>
-		<title>pwrdoor graphics</title>
+		<title>PWR DOOR graphics</title>
 	</head>
 
 	<body>
@@ -22,16 +22,13 @@
 			<main> <!--absolute position-->
 				<section>
 					<script src="functions/js_mediaFunctions.js"></script>
-					<button type="button" class="randomButton" onclick="self.location='graphics.php'">[random graphic]</button>
+					<button type="button" class="randomButton" onclick="self.location='graphics.php'">: graphic.rand()</button>
 					<article class="randomMedia">
 						<?php include 'randomGraphic.php';?>
-						<div class="caption">
-							<a href="<?php echo"graphics/$mediaName";?>" download>
-								<?php echo "<p>$mediaName</p>";?>
-							</a>
-						</div>
+						<a href="<?php echo"graphics/$mediaName";?>" download>
+							<?php echo "<button class='caption'>$mediaName</button>";?>
+						</a>
 					</article>
-					<button type="button" class="randomButton" onclick="self.location='graphics.php'">[another one please]</button>
 				</section>
 			</main>
 

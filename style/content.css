@@ -27,7 +27,7 @@ article {
 	width: 50%;
 	padding: 1em;
 	text-align: center;
-	font-size: 18px;
+	font-size: 14px;
 	color: #4d033a;
 	border-radius: 30px;
 	box-shadow: inset 0 0 0 500px rgba(0,204,0,0.5);
@@ -52,20 +52,22 @@ article {
 }
 
 .randomButton {
-	margin: 2em;
-	padding: .5em;
-	width: 33%;
-	background: inherit;
-	color: #00cc00;
-	font-size: 20px;
-	font-family: 'VT323', monospace;
-	font-weight: bold;
-	border-radius: 30px;
-	border-width: 3px;
-	border-color: #00cc00;
-	box-shadow: inset 0 0 0 500px rgba(0,204,0,0.3);
+	margin: 20px;
+	padding: 5px;
+	font-size: 14px;
+	font-weight: lighter;
 }
 .randomButton:hover {
+
+}
+
+.caption {
+	padding: 5px;
+	color: #ba068c;
+	font-weight: lighter;
+	font-size: 18px;
+}
+.caption:hover {
 
 }
 
@@ -79,28 +81,4 @@ article {
 	width: 100%;
 	min-height: 320px;
 	padding: 0 0 1em 0;
-}
-
-.caption {
-	width: 75%;
-	background: inherit;
-	margin-left: auto;
-	margin-right: auto;
-	padding: 0;
-	font-weight: lighter;
-	font-size: 12px;
-	border-style: double;
-	border-radius: 4px;
-	border-color: #ba068c;
-	border-width: 1px;
-	box-shadow: inset 0 0 0 500px rgba(255,255,255,0.5);
-
-}
-.caption a {
-	color: #ba068c;
-	text-decoration: none;
-	font-style: normal;
-}
-.caption p {
-
 }
