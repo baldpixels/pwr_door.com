@@ -24,12 +24,13 @@
 				<section>
 					<article>
 						<div id="terminalHead">
-							<p class="leftText">u.rand()</p>
+							<p id="leftText">u.rand()</p>
 							<p id="time"></p>
 						</div>
 						<div id="terminal">
-							<p id="termLine"></p>
-							<button onclick="buttonPush()">: ok</button>
+							<div id="termLine">
+								<!--push here-->
+							</div>
 							<script src="u.rand()/terminal.js"></script>
 						</div>
 					</article>

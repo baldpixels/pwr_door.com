@@ -1,4 +1,4 @@
-<a href="movies.php"><img id="topNav" src='images/movies.png' onmouseover="this.src='images/movies_ho.png';" onmouseout="this.src='images/movies.png';"></img></a>
+<a href="movies.php"><img id="topNav" src='images/movies.png' onmouseover="this.src='images/movies_hover.png';" onmouseout="this.src='images/movies.png';"></img></a>
 
 <a href="graphics.php"><img id="bottomNav" src='images/graphics.gif' onmouseover="this.src='images/graphics_hover.gif';" onmouseout="this.src='images/graphics.gif';"></img></a>
 

@@ -21,7 +21,7 @@
   width: 50%;
   height: 20px;
 }
-.leftText {
+#leftText {
   float: left;
   margin: 0;
   padding: 0;
@@ -37,19 +37,45 @@
   padding: 0;
   color: #4d033a;
   font-size: 18px;
+  font-weight: bold;
 }
 
 #terminal button {
-  margin: 5px 5px 5px 25px;
+  margin: 5px 5px 5px 50px;
   font-size: 14px;
 }
 #terminal button:hover {
 
 }
 
-.terminalIn {
-  margin: 10px;
+.termForm {
+  margin: 0;
   padding: 0;
-  color: #00cc00;
+}
+.termForm input {
+  padding: 5px;
+  background: inherit;
+  color: #ba068c;
+  font-weight: lighter;
+  font-family: 'Ubuntu Mono', monospace;
+  border-style: double;
+  border-radius: 4px;
+  border-color: #ba068c;
+  border-width: 1px;
+  box-shadow: inset 0 0 0 500px rgba(255,255,255,0.5);
+}
+.termIn {
+  width: 90px;
   font-size: 16px;
+}
+#termIn1 {
+  margin: 10px;
+}
+.termSubmit {
+  font-size: 12px;
+  margin-left: 5px;
+}
+.termSubmit:hover {
+  color: #00cc00;
+  box-shadow: inset 0 0 0 500px rgba(186,6,140,0.5);
 }
