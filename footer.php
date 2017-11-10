@@ -1,6 +1,6 @@
 <?php
 
-	include 'functions/footerFunctions.php';
+	include 'u.rand()/footerFunctions.php';
 
 	$ip = catchIP();
 	$footerText = randomFooter();

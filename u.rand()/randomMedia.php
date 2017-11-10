@@ -1,6 +1,6 @@
-<?php 
+<?php
 
-	include 'functions/mediaFunctions.php';
+	include 'u.rand()/mediaFunctions.php';
 
 	$media = randomMedia();
 	$mediaName = $media[0];

@@ -6,7 +6,7 @@ html {
 }
 
 body {
-	background-image: url('BG_images/cyberpunk_solo.gif');
+	background-color: #000;
 	background-repeat: repeat;
  	background-attachment: fixed;
  	background-size: 100%;

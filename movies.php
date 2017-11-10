@@ -17,8 +17,6 @@
 				<a href="index.php"><img id="logoTop" src="images/logo.png" onmouseover="this.src='images/logo_hover.png';" onmouseout="this.src='images/logo.png';" alt="pwrdoor.com"/></a>
 			</figure>
 
-			<?php include 'nav.php';?> <!--absolute position-->
-
 			<main> <!--absolute position-->
 				<section>
 					<script src="functions/js_mediaFunctions.js"></script>

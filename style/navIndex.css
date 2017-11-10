@@ -2,6 +2,7 @@
 /* CSS Document */
 
 #logo {
+  z-index: +1;
   width: 50%;
   max-height: 400px;
   max-width: 375px;

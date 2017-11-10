@@ -4,10 +4,17 @@
 
 var startTime = new Date();
 var endTime = new Date(startTime.getTime() + 5*60000);
-var scriptCounter = 0;
-var inputCounter = 0;
+var timeString;
+var endTimeString;
+
+var playing = false;
+var fps = 30;
 var playerNum = 1;
-var inputBool = false;
+
+var terminal = document.getElementById("terminal");
+var ctx = terminal.getContext("2d");
+var debug = document.getElementById("debug");
+terminal.style.display = "none";
 
 //time setup and interval check
 
@@ -19,21 +26,27 @@ function updateTime() {
     else {
       var hours = currentTime.getHours()
       var minutes = currentTime.getMinutes()
+      var seconds = currentTime.getSeconds()
       if (minutes < 10){
           minutes = "0" + minutes
       }
-      var t_str = hours + ":" + minutes + " ";
-      document.getElementById('time').innerHTML = "Current Time = " + t_str;
+      if (seconds < 10){
+        seconds = "0" + seconds
+      }
     }
+    timeString = hours + ":" + minutes + ":" + seconds + " ";
 }
-setInterval(updateTime, 1000);
 
 var endHours = endTime.getHours();
 var endMinutes = endTime.getMinutes();
+var endSeconds = endTime.getSeconds();
 if (endMinutes < 10){
-    endMinutes = "0" + minutes
+    endMinutes = "0" + endMinutes
 }
-var endTimeString = endHours + ":" + endMinutes + " ";
+if (endSeconds < 10){
+  endSeconds = "0" + endSeconds
+}
+endTimeString = endHours + ":" + endMinutes + ":" + endSeconds + " ";
 
 //other functions
 
@@ -41,47 +54,48 @@ function dead() {
   document.innerHTML = "u are dead.";
 }
 
-//scripts
+//pwrClick() reveals terminal and hides logo
+function pwrClick() {
+  playing = true;
+  var logo = document.getElementById("logo");
 
-var script = [": just now, u were created.",
-": at " + endTimeString + " u will die.",
-": u are number " + playerNum + ".",
-"# 1",
-"well done.",
-"now again...",
-"# 2",
-"end"];
+  logo.style.display = "none";
+  terminal.style.display = "block";
+}
 
-var inputs = ["TEST 1 INPUT",
-""];
+//main loop
+setInterval(function() {
+  clearTerminal();
+  update();
+  draw();
+}, 1000/fps);
 
-//first output
+function update(){
+  updateClock();
+}
 
-var termLineContent = script[0];
-document.getElementById('termLine').innerHTML = termLineContent + "<br/><br/>" + "<button onclick='buttonPush()'>: ok</button>";
+function draw(){
+  terminalStyler();
+  ctx.font = "12px monospace";
+  ctx.fillText("> Just now, u were born.", 5, 60);
+}
 
-//buttonPush() determines game flow
+function terminalStyler() {
+  ctx.beginPath();
+  ctx.lineWidth="1";
+  ctx.strokeStyle="#00cc00";
+  ctx.rect(2,2,terminal.width-2,terminal.height-2);
+  ctx.stroke();
+}
 
-function buttonPush() {
-  if(inputBool) {
-    if(document.getElementById("termIn" + inputCounter).match(/^\d{9}$/)) {
-      inputBool = false;
-      inputCounter++;
-    }
-    else {
-      document.getElementById('leftText') = "9 digits please";
-    }
-  }
-  scriptCounter++;
-  if(scriptCounter < (script.length + inputs.length)){
-    if(script[scriptCounter].charAt(0) == ":") {
-      termLineContent = termLineContent + "<br/><br/>" + script[scriptCounter];
-      document.getElementById('termLine').innerHTML = termLineContent + "<br/><br/>" + "<button onclick='buttonPush()'>: ok</button>";
-    }
-    else if(script[scriptCounter].charAt(0) == "#") {
-      termLineContent = termLineContent + "<br/><br/>";
-      document.getElementById('termLine').innerHTML = termLineContent + "<form class='termForm'><input class='termIn' id='termIn1' type='number' minlength='9' maxlength='9' name='termIn1'><input class='termSubmit' type='button' onclick='buttonPush()' value='u.produce()'></form>";
-      inputBool = true;
-    }
-  }
+function clearTerminal() {
+  ctx.clearRect(0, 0, terminal.width, terminal.height);
+}
+
+function updateClock() {
+  updateTime();
+  var x_coord = terminal.width - 135;
+  ctx.fillStyle = "#00cc00";
+  ctx.font = "10px monospace";
+  ctx.fillText("Current Time: " + timeString, x_coord, 15);
 }
