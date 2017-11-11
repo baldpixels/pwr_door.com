@@ -1,7 +1,7 @@
-<a href="movies.php"><img id="topNav" src='images/movies.png' onmouseover="this.src='images/movies_hover.png';" onmouseout="this.src='images/movies.png';"></img></a>
+<img id="topNav" src='images/movies.png' onclick="movies();" onmouseover="this.src='images/movies_hover.png';" onmouseout="this.src='images/movies.png';"></img>
 
-<a href="graphics.php"><img id="bottomNav" src='images/graphics.gif' onmouseover="this.src='images/graphics_hover.gif';" onmouseout="this.src='images/graphics.gif';"></img></a>
+<img id="bottomNav" src='images/graphics.gif' onclick="graphics();" onmouseover="this.src='images/graphics_hover.gif';" onmouseout="this.src='images/graphics.gif';"></img>
 
-<a href="u.rand().php"><img id="rightNav" src='images/rand().gif' onmouseover="this.src='images/rand()_hover.gif';" onmouseout="this.src='images/rand().gif';"></img></a>
+<img id="rightNav" src='images/rand().gif' onclick="urand();" onclick="pwrClick();"onmouseover="this.src='images/rand()_hover.gif';" onmouseout="this.src='images/rand().gif';"></img>
 
-<a href="info.php"><img id="leftNav" src='images/xinxi.png' onmouseover="this.src='images/xinxi_hover.png';" onmouseout="this.src='images/xinxi.png';"></img></a>
+<img id="leftNav" src='images/xinxi.png' onclick="xinxi();" onmouseover="this.src='images/xinxi_hover.png';" onmouseout="this.src='images/xinxi.png';"></img>
