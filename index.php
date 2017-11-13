@@ -5,6 +5,11 @@
 		<meta charset="UTF-8">
 		<?php include 'style/cssLinks.php';?>
 		<?php include 'style/fonts.php';?>
+
+		<link rel="icon" href="images/logo.png">
+
+		<?php include 'scripts/scriptLinks.php';?>
+
 		<title>
 			<?php echo 'PWR DOOR PRODUCES';?>
 		</title>
@@ -12,7 +17,7 @@
 
 	<header>
 		<figure> <!--absolute position-->
-			<img id="logo" src="images/logo.png" onmouseover="this.src='images/logo_hover.png';" onmouseout="this.src='images/logo.png';" onclick="pwrClick();" alt="pwrdoor.com"/>
+			<img id="logo" src="images/logo.png" alt="pwrdoor.com"/>
 		</figure>
 	</header>
 
@@ -20,12 +25,12 @@
 
 		<?php include 'nav.php';?>
 
-		<canvas id="terminal"></canvas>
+		<canvas id="terminal">
+			<p>your browser doesn't support html5. grow up.</p>
+		</canvas>
 
 		<div id="debug">
 		</div>
-
-		<?php include 'u.rand()/scriptLinks.php';?>
 
 	</body>
 
