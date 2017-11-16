@@ -16,6 +16,7 @@
 	</head>
 
 	<body>
+		<div id="BG"></div>
 
 		<header>
 			<figure> <!--absolute position-->
@@ -31,7 +32,6 @@
 
 			<div id="debug">
 			</div>
-
 	</body>
 
 </html>

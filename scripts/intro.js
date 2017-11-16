@@ -4,11 +4,17 @@
 $(document).ready(function(){
 
 $("#terminal").hide();
+$("#BG").hide();
 
 $("#leftNav").hide();
 $("#topNav").hide();
 $("#rightNav").hide();
 $("#bottomNav").hide();
+
+var BG = document.getElementById("BG");
+var BGimg = new Image;
+BGimg.src = "style/BG_images/cyberpunk_solo.gif";
+
 
   //image listeners and hover functions
   $("#logo").click(pwrClick);
@@ -56,15 +62,17 @@ $("#bottomNav").hide();
     open = true;
 
     $("#logo").fadeOut(100);
-    $("#terminal").fadeIn(1000, function(){
-      $("#curtain").fadeOut(1000);
-    });
+    $("#terminal").fadeIn(1000, fadeBG);
+  }
+
+  function fadeBG(){
+    $("#BG").fadeIn(1000);
   }
 
   function xinxiClick(){
     text = true;
   }
-  
+
   function moviesClick(){
 
   }

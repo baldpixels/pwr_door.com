@@ -2,14 +2,6 @@
 
 // this code works the modern way
 
-//timing vars
-var startTime = new Date();
-var endTime = new Date(startTime.getTime() + 5*60000);
-var timeString;
-var endTimeString;
-var fps = 30;
-var frame = 0;
-
 var text = true;
 var movies = false;
 var graphics = false;
@@ -19,52 +11,15 @@ var open = false;
 
 $(document).ready(function(){
 
-  //game button vars
-  var enter = false;
-  var left = false;
-  var right = false;
-  var up = false;
-  var down = false;
-
   //game mechanic vars
   var playerID = 0;
   var level = 0;
   var cursorLoc = [20, 100];
 
-  //setup ctx and hide the terminal
+  //setup ctx
+  var terminal = document.getElementById("terminal");
   var ctx = terminal.getContext("2d");
   $("#debug").html("");
-
-  //updates time
-  function updateTime() {
-      var currentTime = new Date();
-      if(currentTime == endTime) {
-        dead();
-      }
-      else {
-        var hours = currentTime.getHours()
-        var minutes = currentTime.getMinutes()
-        var seconds = currentTime.getSeconds()
-        if (minutes < 10){
-            minutes = "0" + minutes
-        }
-        if (seconds < 10){
-          seconds = "0" + seconds
-        }
-      }
-      timeString = hours + ":" + minutes + ":" + seconds;
-  }
-  //setup string for endTime
-  var endHours = endTime.getHours();
-  var endMinutes = endTime.getMinutes();
-  var endSeconds = endTime.getSeconds();
-  if (endMinutes < 10){
-      endMinutes = "0" + endMinutes
-  }
-  if (endSeconds < 10){
-    endSeconds = "0" + endSeconds
-  }
-  endTimeString = endHours + ":" + endMinutes + ":" + endSeconds;
 
   //game over
   function dead() {
@@ -98,45 +53,6 @@ $(document).ready(function(){
   true,
   true,
   true];
-
-  //keypress listeners/functions
-  $(document).keydown(keyDownHandler);
-  $(document).keyup(keyUpHandler);
-
-  function keyDownHandler(e) {
-      if(e.keyCode == 13) {
-          enter = true;
-      }
-      else if(e.keyCode == 37){
-          left = true;
-      }
-      else if(e.keyCode == 38){
-          up = true;
-      }
-      else if(e.keyCode == 39){
-          right = true;
-      }
-      else if(e.keyCode == 40){
-          down = true;
-      }
-  }
-  function keyUpHandler(e) {
-      if(e.keyCode == 13) {
-          enter = false;
-      }
-      else if(e.keyCode == 37){
-          left = false;
-      }
-      else if(e.keyCode == 38){
-          up = false;
-      }
-      else if(e.keyCode == 39){
-          right = false;
-      }
-      else if(e.keyCode == 40){
-          down = false;
-      }
-  }
 
   //main loop
   function main(){

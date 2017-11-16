@@ -6,14 +6,19 @@ html {
 }
 
 body {
-	background-image: url("https://media1.tenor.com/images/65c21cf17a6a0e9203f2e6f911339bcd/tenor.gif");
+	background-color: #000;
+}
+
+#BG {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-image: url("BG_images/cyberpunk_solo.gif");
+	background-position: center;
+	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: 75%;
-	max-size: 750px;
-	background-position: +50% +50%;
-	background-repeat: no-repeat;
-	background-color: #000;
-	z-index: -2;
+	z-index: -1;
 }
 
 #logo {
