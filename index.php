@@ -15,22 +15,22 @@
 		</title>
 	</head>
 
-	<header>
-		<figure> <!--absolute position-->
-			<img id="logo" src="images/logo.png" alt="pwrdoor.com"/>
-		</figure>
-	</header>
-
 	<body>
 
-		<?php include 'nav.php';?>
+		<header>
+			<figure> <!--absolute position-->
+				<img id="logo" src="images/logo.png" alt="pwrdoor.com"/>
+			</figure>
+		</header>
 
-		<canvas id="terminal">
-			<p>your browser doesn't support html5. grow up.</p>
-		</canvas>
+			<?php include 'nav.php';?>
 
-		<div id="debug">
-		</div>
+			<canvas id="terminal">
+				<p>your browser doesn't support html5. grow up.</p>
+			</canvas>
+
+			<div id="debug">
+			</div>
 
 	</body>
 

@@ -6,21 +6,35 @@ html {
 }
 
 body {
+	background-image: url("https://media1.tenor.com/images/65c21cf17a6a0e9203f2e6f911339bcd/tenor.gif");
+	background-attachment: fixed;
+	background-size: 75%;
+	max-size: 750px;
+	background-position: +50% +50%;
+	background-repeat: no-repeat;
 	background-color: #000;
-	background-repeat: repeat;
- 	background-attachment: fixed;
- 	background-size: 100%;
+	z-index: -2;
 }
 
-#container {
-	width: 100%;
-	height: 100%;
+#logo {
+  z-index: +1;
+  width: 50%;
+  max-height: 400px;
+  max-width: 375px;
 	position: fixed;
-	top: 0;
-	left: 0;
-	overflow: scroll;
-	font-family: 'Ubuntu Mono', monospace;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+#logo:hover {
 
+}
+
+#curtain {
+	height:100%;
+	width: 500px;
+	background-color: #ba068c;
+	z-index: +3;
 }
 
 header {
@@ -31,36 +45,4 @@ a {
 	text-decoration: none;
 	font-style: italic;
 	color: #ba068c;
-}
-
-button {
-	background: inherit;
-	color: #ba068c;
-	font-weight: lighter;
-	font-family: 'Ubuntu Mono', monospace;
-	border-style: double;
-	border-radius: 4px;
-	border-color: #ba068c;
-	border-width: 1px;
-	box-shadow: inset 0 0 0 500px rgba(255,255,255,0.5);
-}
-button:hover {
-	color: #00cc00;
-	box-shadow: inset 0 0 0 500px rgba(186,6,140,0.5);
-}
-
-#footer {
-	color: #00cc00;
-	background: inherit;
-	position: fixed;
-	bottom: 0px;
-	width: 100%;
-	text-align: center;
-	font-size: 12px;
-	margin: 0;
-	padding: 0;
-	box-shadow: inset 0 0 0 500px rgba(0,204,0,0.3);
-}
-#footer:hover {
-
 }

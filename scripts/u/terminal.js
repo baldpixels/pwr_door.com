@@ -2,15 +2,22 @@
 
 // this code works the modern way
 
-$(document).ready(function(){
+//timing vars
+var startTime = new Date();
+var endTime = new Date(startTime.getTime() + 5*60000);
+var timeString;
+var endTimeString;
+var fps = 30;
+var frame = 0;
 
-  //timing vars
-  var startTime = new Date();
-  var endTime = new Date(startTime.getTime() + 5*60000);
-  var timeString;
-  var endTimeString;
-  var fps = 30;
-  var frame = 0;
+var text = true;
+var movies = false;
+var graphics = false;
+
+var gaming = false;
+var open = false;
+
+$(document).ready(function(){
 
   //game button vars
   var enter = false;
@@ -133,11 +140,15 @@ $(document).ready(function(){
 
   //main loop
   function main(){
-    update();
-    draw();
-
-    frame++;
-    $("#debug").html("<p>frame = " + frame + "</p>");
+    if(text){
+      if(gaming==true){
+        game();
+      }
+      update();
+      draw();
+      frame++;
+      $("#debug").html("<p>frame = " + frame + "</p>");
+    }
   }
   setInterval(main, 1000/fps);
 

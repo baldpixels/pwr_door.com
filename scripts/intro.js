@@ -3,8 +3,6 @@
 // this code works the modern way
 $(document).ready(function(){
 
-var playing = false;
-
 $("#terminal").hide();
 
 $("#leftNav").hide();
@@ -12,7 +10,7 @@ $("#topNav").hide();
 $("#rightNav").hide();
 $("#bottomNav").hide();
 
-  //image listeners
+  //image listeners and hover functions
   $("#logo").click(pwrClick);
   $("#logo").hover(function(){
     this.src = "images/logo_hover.png";
@@ -53,22 +51,27 @@ $("#bottomNav").hide();
     this.src = "images/graphics.gif";
   });
 
-  //hover functions
+  //pwrClick kicks things off
   function pwrClick(){
-    playing = true;
+    open = true;
 
     $("#logo").fadeOut(100);
-    $("#terminal").fadeIn(1000);
+    $("#terminal").fadeIn(1000, function(){
+      $("#curtain").fadeOut(1000);
+    });
   }
 
   function xinxiClick(){
-
+    text = true;
   }
+  
   function moviesClick(){
 
   }
-  function uClick(){
 
+  //initiates game
+  function uClick(){
+    gaming = true;
   }
   function graphicsClick(){
 
