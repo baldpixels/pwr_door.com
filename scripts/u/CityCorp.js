@@ -1,14 +1,14 @@
 "use strict";
+//global
 
-var start = false;
+var playing = false;
 
-function game(){
-  start = true;
+function startGame(){
+  playing = true;
 }
 
-// this code works the modern way
-
 $(document).ready(function(){
+//local
 
   var xL = 50;
   var xR = 60;
@@ -18,8 +18,10 @@ $(document).ready(function(){
   var dx;
   var dy;
 
+  //setup ctx
   var terminal = document.getElementById("terminal");
   var ctx = terminal.getContext("2d");
+
   $("#debug").html("");
 
   var depth;
@@ -32,22 +34,27 @@ $(document).ready(function(){
   }
 
   function checkGame(){
-    if(start){
-      text = false;
+    if(playing){
       drawOneColumn();
       shift();
       updateGrid();
       //everything goes here
     }
   }
-  setInterval(checkGame, 1000/fps);
+  setInterval(checkGame, 100);
 
-  function drawOneColumn(){
+  function drawGame(){
     ctx.beginPath();
     ctx.rect(0, 25, terminal.width, 50);
     ctx.fillStyle = "#ba068c";
     ctx.fill();
     ctx.closePath();
+  }
+
+  function drawCursor(){
+    ctx.fillStyle = "#00cc00";
+    ctx.font = "12px monospace";
+    ctx.fillText("_", cursorLoc[0], cursorLoc[1]);
   }
 
   function shift(){

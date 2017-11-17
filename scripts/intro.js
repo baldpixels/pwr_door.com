@@ -1,22 +1,28 @@
 "use strict";
+//global
 
-// this code works the modern way
 $(document).ready(function(){
+//local
 
-$("#terminal").hide();
-$("#BG").hide();
+  $("#terminal").hide();
+  $("#BG").hide();
 
-$("#leftNav").hide();
-$("#topNav").hide();
-$("#rightNav").hide();
-$("#bottomNav").hide();
+  $("#leftNav").hide();
+  $("#topNav").hide();
+  $("#rightNav").hide();
+  $("#bottomNav").hide();
 
-var BG = document.getElementById("BG");
-var BGimg = new Image;
-BGimg.src = "style/BG_images/cyberpunk_solo.gif";
+  var BG = document.getElementById("BG");
+  var BGimg = new Image;
+  BGimg.src = "style/BG_images/cyberpunk_solo.gif";
 
+  //setup ctx
+  var terminal = document.getElementById("terminal");
+  var ctx = terminal.getContext("2d");
 
-  //image listeners and hover functions
+  $("#debug").html("");
+
+  //nav listeners and hover functions
   $("#logo").click(pwrClick);
   $("#logo").hover(function(){
     this.src = "images/logo_hover.png";
@@ -59,31 +65,60 @@ BGimg.src = "style/BG_images/cyberpunk_solo.gif";
 
   //pwrClick kicks things off
   function pwrClick(){
-    open = true;
-
     $("#logo").fadeOut(100);
     $("#terminal").fadeIn(1000, fadeBG);
   }
 
-  function fadeBG(){
-    $("#BG").fadeIn(1000);
-  }
+    function fadeBG(){
+      $("#BG").fadeIn(1000, navFadeIn);
+    }
+
+    //animations and effects
+    function navFadeIn(){
+      $("#leftNav").fadeIn(500, function(){
+        $("#topNav").fadeIn(500, function(){
+          $("#rightNav").fadeIn(500, function(){
+            $("#bottomNav").fadeIn(500)
+          })
+        })
+      });
+    }
 
   function xinxiClick(){
-    text = true;
+    xinxi = true;
+
+    intro = false;
+    movies = false;
+    graphics = false;
+    gaming = false;
   }
 
   function moviesClick(){
+    movies = true
 
+    intro = false;
+    gaming = false;
+    graphics = false;
+    xinxi = false;
   }
 
   //initiates game
   function uClick(){
     gaming = true;
+
+    intro = false;
+    movies = false
+    graphics = false;
+    xinxi = false;
   }
+
   function graphicsClick(){
+    graphics = true;
 
+    intro = false;
+    movies = false
+    xinxi = false;
+    gaming = false;
   }
-
 
 });

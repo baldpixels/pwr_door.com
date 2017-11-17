@@ -1,222 +1,118 @@
 "use strict";
+//global
 
-// this code works the modern way
+  var intro = true;
 
-var text = true;
-var movies = false;
-var graphics = false;
-
-var gaming = false;
-var open = false;
+  var movies = false;
+  var graphics = false;
+  var gaming = false;
+  var xinxi = false;
 
 $(document).ready(function(){
-
-  //game mechanic vars
-  var playerID = 0;
-  var level = 0;
-  var cursorLoc = [20, 100];
+//local
 
   //setup ctx
   var terminal = document.getElementById("terminal");
   var ctx = terminal.getContext("2d");
+
   $("#debug").html("");
 
-  //game over
-  function dead() {
-    $(document).html("<html></html>");
-  }
-
-  //gameplay
-  var script = ["Hello.",
-  "I'm u.",
-  "Select one of these...",
-  "Select one of these...",
-  "OK. Now choose a file.",
-  "END."];
-
-  var instructions = ["> press enter",
-  "> press enter",
-  "> press enter",
-  "> select an image",
-  "> move the cursor"];
-
-  var waitingForArrow = [false,
-  false,
-  false,
-  false,
-  true,
-  false];
-
-  var waitingForEnter = [true,
-  true,
-  true,
-  true,
-  true,
-  true];
-
   //main loop
+  //
+  //
   function main(){
-    if(text){
-      if(gaming==true){
-        game();
-      }
-      update();
-      draw();
-      frame++;
-      $("#debug").html("<p>frame = " + frame + "</p>");
-    }
+    update();
+    draw();
+
+    frame++;
+    $("#debug").html("<p>frame = " + frame + "</p>");
   }
   setInterval(main, 1000/fps);
 
-  //update all variables
-  function update(){
-      updateTime();
-      updateSize();
-      updateButtons();
-      levelEffects();
-  }
+    //update all variables
+    function update(){
+        updateTime();
+        updateSize();
+    }
 
-  function updateSize(){
-    terminal.height = terminal.width;
-  }
+      function updateSize(){
+        terminal.height = terminal.width;
+      }
 
-  function updateButtons(){
-    if(waitingForEnter[level]){
-      if(enter){
-        if(level >= script.length){
-          level = 0;
-        }
-        else{
-          level++;
-        }
-        enter = false;
+      function clearTerminal() {
+        ctx.clearRect(0, 0, terminal.width, terminal.height);
+      }
+
+      function setupCanvas() {
+        //clear terminal
+        ctx.clearRect(0, 0, terminal.width, terminal.height);
+
+        //fill canvas
+        ctx.beginPath();
+        ctx.rect(0, 0, terminal.width, terminal.height);
+        ctx.fillStyle = "#000";
+        ctx.fill();
+        ctx.closePath();
+
+        //fill top bar
+        ctx.beginPath();
+        ctx.rect(0, 0, terminal.width, 24);
+        ctx.fillStyle = "#00cc00";
+        ctx.fill();
+        ctx.closePath();
+
+        //draw border
+        ctx.beginPath();
+        ctx.lineWidth="2";
+        ctx.strokeStyle="#00cc00";
+        ctx.rect(1,1,terminal.width-2,terminal.height-2);
+        ctx.stroke();
+        ctx.closePath();
+
+        //draw input box
+        ctx.beginPath();
+        ctx.moveTo(0, terminal.height-24);
+        ctx.lineTo(terminal.width, terminal.height-24);
+        ctx.lineWidth="2";
+        ctx.stroke();
+        ctx.closePath();
+      }
+
+      function drawClock(){
+        var x_coord = terminal.width - 135;
+        var y_coord = 15;
+
+        ctx.fillStyle = "#000";
+        ctx.font = "10px monospace";
+        ctx.fillText("Current Time: " + timeString, x_coord, y_coord);
+      }
+
+    function draw(){
+      setupCanvas();
+      drawClock();
+
+      if(intro){
+        introDraw();
+      }
+
+      if(gaming){
+
+      }
+      else if(xinxi){
+
+      }
+      else if(movies){
+
+      }
+      else if(graphics){
+
       }
     }
-    if(waitingForArrow[level]){
-      if(left){
-        moveLeft();
-      }
-      else if(up){
-        moveUp();
-      }
-      else if(right){
-        moveRight();
-      }
-      else if(down){
-        moveDown();
-      }
+
+    function introDraw(){
+      ctx.fillStyle = "#00cc00";
+      ctx.font = "12px monospace";
+      ctx.fillText("Hello. Please choose one of these.", 20, 60);
     }
-  }
-
-  function levelEffects(){
-    if(level == 3){
-      navFadeIn();
-    }
-  }
-
-  function draw(){
-    clearTerminal();
-    setupCanvas();
-    drawClock();
-    drawText();
-    if(waitingForArrow[level]){
-      drawCursor();
-    }
-  }
-
-  function clearTerminal() {
-    ctx.clearRect(0, 0, terminal.width, terminal.height);
-  }
-
-  function setupCanvas() {
-    //fill canvas
-    ctx.beginPath();
-    ctx.rect(0, 0, terminal.width, terminal.height);
-    ctx.fillStyle = "#000";
-    ctx.fill();
-    ctx.closePath();
-
-    //fill top bar
-    ctx.beginPath();
-    ctx.rect(0, 0, terminal.width, 25);
-    ctx.fillStyle = "#00cc00";
-    ctx.fill();
-    ctx.closePath();
-
-    //draw border
-    ctx.beginPath();
-    ctx.lineWidth="2";
-    ctx.strokeStyle="#00cc00";
-    ctx.rect(1,1,terminal.width-2,terminal.height-2);
-    ctx.stroke();
-    ctx.closePath();
-  }
-
-  function drawClock(){
-    var x_coord = terminal.width - 135;
-    var y_coord = 15;
-
-    ctx.fillStyle = "#000";
-    ctx.font = "10px monospace";
-    ctx.fillText("Current Time: " + timeString, x_coord, y_coord);
-  }
-
-  function drawText(){
-    var currentText = script[level];
-    var currentInst = instructions[level];
-
-    ctx.fillStyle = "#00cc00";
-    ctx.font = "12px monospace";
-    ctx.fillText(currentText, 20, 60);
-
-    blinkInst(currentInst);
-  }
-
-  function drawCursor(){
-    ctx.fillStyle = "#00cc00";
-    ctx.font = "12px monospace";
-    ctx.fillText("_", cursorLoc[0], cursorLoc[1]);
-  }
-
-  function moveLeft(){
-    cursorLoc[0] = cursorLoc[0] - 5;
-    drawCursor();
-  }
-  function moveUp(){
-    cursorLoc[1] = cursorLoc[1] - 5;
-    drawCursor();
-  }
-  function moveRight(){
-    cursorLoc[0] = cursorLoc[0] + 5;
-    drawCursor();
-  }
-  function moveDown(){
-    cursorLoc[1] = cursorLoc[1] + 5;
-    drawCursor();
-  }
-
-  //animations and effects
-  function blinkInst(text){
-    var now = new Date();
-    ctx.font = "12px monospace";
-    //show cursor
-    if((now.getSeconds())%2 == 0){
-      ctx.fillText(text + " /", 20, 80);
-    }
-    //no cursor
-    else{
-      ctx.fillText(text, 20, 80);
-    }
-  }
-
-  function navFadeIn(){
-    $("#leftNav").fadeIn(500, function(){
-      $("#topNav").fadeIn(500, function(){
-        $("#rightNav").fadeIn(500, function(){
-          $("#bottomNav").fadeIn(500)
-        })
-      })
-    });
-  }
 
 });

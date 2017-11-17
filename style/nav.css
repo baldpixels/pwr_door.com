@@ -8,28 +8,8 @@
  height: auto;
 	width: 25%;
 	transform: translate(0, -50%);
-	-webkit-filter: blur(3px);
-       -moz-filter: blur(2px);
-        -ms-filter: blur(2px);
-         -o-filter: blur(2px);
-            filter: blur(2px);
-    -webkit-transition: all 1s 1s linear;
-       -moz-transition: all 1s 1s linear;
-        -ms-transition: all 1s 1s linear;
-         -o-transition: all 1s 1s linear;
-            transition: all 1s 1s linear;
 }
 #leftNav:hover {
-	-webkit-filter: blur(1px);
-       -moz-filter: blur(1px);
-        -ms-filter: blur(1px);
-         -o-filter: blur(1px);
-            filter: blur(1px);
-    -webkit-transition: all 0.2s linear;
-       -moz-transition: all 0.2s linear;
-        -ms-transition: all 0.2s linear;
-         -o-transition: all 0.2s linear;
-            transition: all 0.2s linear;
 }
 
 #topNav {
@@ -39,28 +19,8 @@
 	width: auto;
  height:25%;
 	transform: translate(-50%, 0);
-	-webkit-filter: blur(2px);
-       -moz-filter: blur(2px);
-        -ms-filter: blur(2px);
-         -o-filter: blur(2px);
-            filter: blur(2px);
-    -webkit-transition: all 1s 1s linear;
-       -moz-transition: all 1s 1s linear;
-        -ms-transition: all 1s 1s linear;
-         -o-transition: all 1s 1s linear;
-            transition: all 1s 1s linear;
 }
 #topNav:hover {
-	-webkit-filter: blur(1px);
-       -moz-filter: blur(1px);
-        -ms-filter: blur(1px);
-         -o-filter: blur(1px);
-            filter: blur(1px);
-    -webkit-transition: all 0.2s linear;
-       -moz-transition: all 0.2s linear;
-        -ms-transition: all 0.2s linear;
-         -o-transition: all 0.2s linear;
-            transition: all 0.2s linear;
 }
 
 #rightNav {
@@ -70,28 +30,8 @@
 	width: 25%;
  height:auto;
 	transform: translate(0, +50%);
-	-webkit-filter: blur(3px);
-       -moz-filter: blur(2px);
-        -ms-filter: blur(2px);
-         -o-filter: blur(2px);
-            filter: blur(2px);
-    -webkit-transition: all 1s 1s linear;
-       -moz-transition: all 1s 1s linear;
-        -ms-transition: all 1s 1s linear;
-         -o-transition: all 1s 1s linear;
-            transition: all 1s 1s linear;
 }
 #rightNav:hover {
-	-webkit-filter: blur(1px);
-       -moz-filter: blur(1px);
-        -ms-filter: blur(1px);
-         -o-filter: blur(1px);
-            filter: blur(1px);
-    -webkit-transition: all 0.2s linear;
-       -moz-transition: all 0.2s linear;
-        -ms-transition: all 0.2s linear;
-         -o-transition: all 0.2s linear;
-            transition: all 0.2s linear;
 }
 
 #bottomNav {
@@ -101,26 +41,6 @@
 	width: auto;
  height:25%;
 	transform: translate(+50%, 0);
-	-webkit-filter: blur(3px);
-       -moz-filter: blur(2px);
-        -ms-filter: blur(2px);
-         -o-filter: blur(2px);
-            filter: blur(2px);
-    -webkit-transition: all 1s 1s linear;
-       -moz-transition: all 1s 1s linear;
-        -ms-transition: all 1s 1s linear;
-         -o-transition: all 1s 1s linear;
-            transition: all 1s 1s linear;
 }
 #bottomNav:hover {
-	-webkit-filter: blur(1px);
-       -moz-filter: blur(1px);
-        -ms-filter: blur(1px);
-         -o-filter: blur(1px);
-            filter: blur(1px);
-    -webkit-transition: all 0.2s linear;
-       -moz-transition: all 0.2s linear;
-        -ms-transition: all 0.2s linear;
-         -o-transition: all 0.2s linear;
-            transition: all 0.2s linear;
 }
