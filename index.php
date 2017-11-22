@@ -3,7 +3,7 @@
 
 	<head>
 		<meta charset="UTF-8">
-		<?php include 'style/cssLinks.php';?>
+		<?php include 'style/styleLinks.php';?>
 		<?php include 'style/fonts.php';?>
 
 		<link rel="icon" href="images/logo.png">

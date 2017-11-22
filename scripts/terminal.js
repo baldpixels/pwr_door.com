@@ -15,6 +15,9 @@ $(document).ready(function(){
   var terminal = document.getElementById("terminal");
   var ctx = terminal.getContext("2d");
 
+  var topBound = 24;
+  var bottomBound = terminal.height - 24;
+
   $("#debug").html("");
 
   //main loop
@@ -95,8 +98,8 @@ $(document).ready(function(){
         introDraw();
       }
 
-      if(gaming){
-
+      else if(gaming){
+        gameDraw();
       }
       else if(xinxi){
 
@@ -114,5 +117,68 @@ $(document).ready(function(){
       ctx.font = "12px monospace";
       ctx.fillText("Hello. Please choose one of these.", 20, 60);
     }
+
+    function gameDraw(){
+      // draw center octagon
+      if(octaCenter){
+        octaCenterMap(30);
+      }
+      else{
+        squareCenterMap();
+      }
+
+    }
+
+      function octaCenterMap(size){
+          var y = topBound;
+          var x = 0;
+
+          while(topBound <= y <= bottomBound){
+            drawOctagon(size, x, y);
+            while(0 <= x <= terminal.width){
+              drawOctagon(size, x, y);
+              x = x + size*2;
+            }
+            x = 0;
+            y = y + size*2;
+          }
+
+      }
+
+      function squareCenterMap(){
+
+      }
+
+        function drawOctagon(size, xCenter, yCenter){
+          var numberOfSides = 8,
+            rotation = Math.PI/8;
+
+          ctx.beginPath();
+          ctx.moveTo (xCenter +  size * Math.cos(0 + rotation), yCenter +  size *  Math.sin(0 + rotation));
+
+          for (var i = 1; i <= numberOfSides; i += 1) {
+              ctx.lineTo (xCenter + size * Math.cos(i * 2 * Math.PI / numberOfSides + rotation), yCenter + size * Math.sin(i * 2 * Math.PI / numberOfSides + rotation));
+          }
+
+          ctx.strokeStyle = "#00cc00";
+          ctx.lineWidth = 4;
+          ctx.stroke();
+        }
+
+        function drawSquare(size, xCenter, yCenter){
+          var numberOfSides = 4,
+            rotation = Math.PI/4;
+
+          ctx.beginPath();
+          ctx.moveTo (xCenter +  size * Math.cos(0 + rotation), yCenter +  size *  Math.sin(0 + rotation));
+
+          for (var i = 1; i <= numberOfSides; i += 1) {
+              ctx.lineTo (xCenter + size * Math.cos(i * 2 * Math.PI / numberOfSides + rotation), yCenter + size * Math.sin(i * 2 * Math.PI / numberOfSides + rotation));
+          }
+
+          ctx.strokeStyle = "#00cc00";
+          ctx.lineWidth = 2;
+          ctx.stroke();
+        }
 
 });

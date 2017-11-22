@@ -3,46 +3,52 @@
 
   //game button vars
   var enter = false;
+
   var left = false;
   var right = false;
   var up = false;
   var down = false;
 
-  //keypress listeners/functions
-  $(document).keydown(keyDownHandler);
-  $(document).keyup(keyUpHandler);
+  var upRight = false;
+  var upLeft = false;
+  var downLeft = false;
+  var downRight = false;
 
-  function keyDownHandler(e) {
-      if(e.keyCode == 13) {
-          enter = true;
+  //keypress listeners/functions
+  //$(document).keydown(keyDownHandler);
+  //$(document).keyup(keyUpHandler);
+
+  var keyMap = {}; // You could also use an array
+
+  onkeydown = onkeyup = function(e){
+      e = e || event; // to deal with IE
+      keyMap[e.keyCode] = e.type == 'keydown';
+
+      //check double keypress cases first
+      if(keyMap[37] && keyMap[38]){ // left+up
+          moveLeftUp();
       }
-      else if(e.keyCode == 37){
-          left = true;
+      else if(keyMap[37] && keyMap[40]){ // left+down
+          moveLeftDown();
       }
-      else if(e.keyCode == 38){
-          up = true;
+      else if(keyMap[39] && keyMap[40]){ // right+down
+          moveRightDown();
       }
-      else if(e.keyCode == 39){
-          right = true;
+      else if(keyMap[39] && keyMap[38]){ // right+up
+          moveRightUp();
       }
-      else if(e.keyCode == 40){
-          down = true;
+
+      //single keypress cases
+      else if(keyMap[39] && keyMap[38]){ // right+up
+          moveRightUp();
       }
-  }
-  function keyUpHandler(e) {
-      if(e.keyCode == 13) {
-          enter = false;
+      else if(keyMap[39] && keyMap[38]){ // right+up
+          moveRightUp();
       }
-      else if(e.keyCode == 37){
-          left = false;
+      else if(keyMap[39] && keyMap[38]){ // right+up
+          moveRightUp();
       }
-      else if(e.keyCode == 38){
-          up = false;
-      }
-      else if(e.keyCode == 39){
-          right = false;
-      }
-      else if(e.keyCode == 40){
-          down = false;
+      else if(keyMap[39] && keyMap[38]){ // right+up
+          moveRightUp();
       }
   }

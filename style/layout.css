@@ -13,7 +13,7 @@ body {
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	background-image: url("BG_images/cyberpunk_solo.gif");
+	/*background-image: url("BG_images/cyberpunk_solo.gif");*/
 	background-position: center;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -33,13 +33,6 @@ body {
 }
 #logo:hover {
 
-}
-
-#curtain {
-	height:100%;
-	width: 500px;
-	background-color: #ba068c;
-	z-index: +3;
 }
 
 header {

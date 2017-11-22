@@ -3,4 +3,4 @@
 <script src="scripts/u/controls.js"></script>
 <script src="scripts/intro.js"></script>
 <script src="scripts/terminal.js"></script>
-<script src="scripts/u/CityCorp.js"></script>
+<script src="scripts/u/gameplay.js"></script>
