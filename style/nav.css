@@ -2,10 +2,10 @@
 /* CSS Document */
 
 #leftNav {
- position: fixed;
+  position: fixed;
 	top: 50%;
 	left: 1em;
- height: auto;
+  height: auto;
 	width: 25%;
 	transform: translate(0, -50%);
 }
@@ -13,33 +13,33 @@
 }
 
 #topNav {
- position: fixed;
+  position: fixed;
 	top: 1em;
 	left: 50%;
 	width: auto;
- height:25%;
+  height: 25%;
 	transform: translate(-50%, 0);
 }
 #topNav:hover {
 }
 
 #rightNav {
- position: fixed;
+  position: fixed;
 	bottom: 50%;
 	right: 1em;
 	width: 25%;
- height:auto;
+  height: auto;
 	transform: translate(0, +50%);
 }
 #rightNav:hover {
 }
 
 #bottomNav {
- position: fixed;
+  position: fixed;
 	right: 50%;
 	bottom: 1em;
 	width: auto;
- height:25%;
+  height: 25%;
 	transform: translate(+50%, 0);
 }
 #bottomNav:hover {

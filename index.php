@@ -8,8 +8,6 @@
 
 		<link rel="icon" href="images/logo.png">
 
-		<?php include 'scripts/scriptLinks.php';?>
-
 		<title>
 			<?php echo 'PWR DOOR PRODUCES';?>
 		</title>
@@ -18,20 +16,20 @@
 	<body>
 		<div id="BG"></div>
 
-		<header>
-			<figure> <!--absolute position-->
-				<img id="logo" src="images/logo.png" alt="pwrdoor.com"/>
-			</figure>
-		</header>
+		<!--absolute position-->
+		<div id="wrapper">
 
+			<!--fixed position-->
+			<img id="logo" src="images/logo.png" alt="pwrdoor.com"/>
+
+			<!--fixed position-->
 			<?php include 'nav.php';?>
 
-			<canvas id="terminal">
-				<p>your browser doesn't support html5. grow up.</p>
-			</canvas>
+			<div id="debug"></div>
 
-			<div id="debug">
-			</div>
+		</div>
+		
+		<?php include 'scripts/scriptLinks.php';?>
 	</body>
 
 </html>

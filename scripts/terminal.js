@@ -1,13 +1,6 @@
 "use strict";
 //global
 
-  var intro = true;
-
-  var movies = false;
-  var graphics = false;
-  var gaming = false;
-  var xinxi = false;
-
 $(document).ready(function(){
 //local
 

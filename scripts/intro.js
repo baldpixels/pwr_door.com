@@ -1,42 +1,29 @@
 "use strict";
 //global
 
+var intro = true;
+
+var movieTime = false;
+var graphics = false;
+
 $(document).ready(function(){
 //local
 
-  $("#terminal").hide();
   $("#BG").hide();
 
-  $("#leftNav").hide();
   $("#topNav").hide();
-  $("#rightNav").hide();
   $("#bottomNav").hide();
-
-  var BG = document.getElementById("BG");
-  var BGimg = new Image;
-  BGimg.src = "style/BG_images/cyberpunk_solo.gif";
-
-  //setup ctx
-  var terminal = document.getElementById("terminal");
-  var ctx = terminal.getContext("2d");
 
   $("#debug").html("");
 
   //nav listeners and hover functions
   $("#logo").click(pwrClick);
+
   $("#logo").hover(function(){
     this.src = "images/logo_hover.png";
   });
   $("#logo").mouseleave(function(){
     this.src = "images/logo.png";
-  });
-
-  $("#leftNav").click(xinxiClick);
-  $("#leftNav").hover(function(){
-    this.src = "images/xinxi_hover.png";
-  });
-  $("#leftNav").mouseleave(function(){
-    this.src = "images/xinxi.png";
   });
 
   $("#topNav").click(moviesClick);
@@ -47,26 +34,40 @@ $(document).ready(function(){
     this.src = "images/movies.png";
   });
 
-  $("#rightNav").click(uClick);
-  $("#rightNav").hover(function(){
-    this.src = "images/rand()_hover.gif";
-  });
-  $("#rightNav").mouseleave(function(){
-    this.src = "images/rand().gif";
-  });
-
   $("#bottomNav").click(graphicsClick);
   $("#bottomNav").hover(function(){
-    this.src = "images/graphics_hover.gif";
+    this.src = "images/graphics_hover.png";
   });
   $("#bottomNav").mouseleave(function(){
-    this.src = "images/graphics.gif";
+    this.src = "images/graphics.png";
   });
 
   //pwrClick kicks things off
   function pwrClick(){
-    $("#logo").fadeOut(100);
-    $("#terminal").fadeIn(1000, fadeBG);
+    if(intro){
+      navFadeIn();
+      intro = false;
+    }
+    if(movieTime){
+      if(logoUp){
+        //re-center logo
+        $("#logo").animate({"top":"+=200px"}, 1000, "swing");
+        logoUp = false;
+
+        $("#topNav").fadeIn(1000);
+      }
+      movieTime = false;
+    }
+    if(graphics){
+      if(logoDown){
+        //re-center logo
+        $("#logo").animate({"top":"-=200px"}, 1000, "swing");
+        down = false;
+
+        $("#bottomNav").fadeIn(1000);
+      }
+      graphics = false;
+    }
   }
 
     function fadeBG(){
@@ -75,50 +76,23 @@ $(document).ready(function(){
 
     //animations and effects
     function navFadeIn(){
-      $("#leftNav").fadeIn(500, function(){
-        $("#topNav").fadeIn(500, function(){
-          $("#rightNav").fadeIn(500, function(){
-            $("#bottomNav").fadeIn(500)
-          })
-        })
+      $("#topNav").fadeIn(500, function(){
+        $("#bottomNav").fadeIn(500)
       });
     }
 
-  function xinxiClick(){
-    xinxi = true;
-
-    intro = false;
-    movies = false;
-    graphics = false;
-    gaming = false;
-  }
-
   function moviesClick(){
-    movies = true
+    movieTime = true;
 
     intro = false;
-    gaming = false;
     graphics = false;
-    xinxi = false;
-  }
-
-  //initiates game
-  function uClick(){
-    gaming = true;
-
-    intro = false;
-    movies = false
-    graphics = false;
-    xinxi = false;
   }
 
   function graphicsClick(){
     graphics = true;
 
     intro = false;
-    movies = false
-    xinxi = false;
-    gaming = false;
+    movieTime = false;
   }
 
 });
