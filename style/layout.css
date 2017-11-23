@@ -6,42 +6,85 @@ html {
 	padding: 0;
 }
 
-body {
-	background-color: #000;
-}
-
-#wrapper {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	margin: 0;
-	padding: 0;
-}
-
-#BG {
-	z-index: -1;
-	width: 100%;
-	height: 100%;
-	/*background-image: url("BG_images/cyberpunk_solo.gif");*/
-	background-position: center;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size: contain;
-}
-
-#logo {
-  z-index: +1;
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-  width: 50%;
-  	max-width: 375px;
-		min-width: 280px;
-}
-#logo:hover {
-}
-
 a {
 	text-decoration: none;
 }
+
+	body {
+		background-color: #000;
+	}
+
+		#wrapper {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			margin: 0;
+			padding: 0;
+		}
+
+			#logo {
+			  z-index: +1;
+				position: fixed;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			  width: 50%;
+			  	max-width: 375px;
+					min-width: 280px;
+			}
+			#logo:hover {
+			}
+
+			#movieTheater{
+				z-index: -1;
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				background-image: url("BG_images/cyberpunk_solo.gif");
+				background-position: center;
+				background-repeat: no-repeat;
+				background-attachment: fixed;
+				background-size: cover;
+				box-shadow: inset 0 0 0 3000px rgba(0,204,0,0.3);
+			}
+
+				#screen1, #screen2{
+					z-index: +1;
+					position: fixed;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50px);
+					width: 75%;
+					height: 350px;
+						max-width: 650px;
+						min-width: 400px;
+					border: 0;
+					margin: 0;
+					padding: 10px;
+				}
+
+			#gallery{
+				z-index: -1;
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				background-image: url("BG_images/cyberpunk_love.gif");
+				background-position: center;
+				background-repeat: no-repeat;
+				background-attachment: fixed;
+				background-size: cover;
+				box-shadow: inset 0 0 0 3000px rgba(0,204,0,0.3);
+			}
+
+			#prev, #next{
+				z-index: +1;
+				position: fixed;
+				top: 66%;
+				width: 50px;
+			}
+			#prev{
+				left: 1%;
+			}
+			#next{
+				right: 1%;
+			}

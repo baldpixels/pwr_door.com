@@ -14,8 +14,6 @@
 	</head>
 
 	<body>
-		<div id="BG"></div>
-
 		<!--absolute position-->
 		<div id="wrapper">
 
@@ -25,10 +23,25 @@
 			<!--fixed position-->
 			<?php include 'nav.php';?>
 
+			<!--absolute position-->
+			<div id="movieTheater">
+				<!--fixed position-->
+				<iframe id="screen1"></iframe>
+				<iframe id="screen2"></iframe>
+			</div>
+
+			<!--absolute position-->
+			<div id="gallery">
+
+			</div>
+
+			<img id="prev" src="images/prev.png">
+			<img id="next" src="images/next.png">
+
 			<div id="debug"></div>
 
 		</div>
-		
+
 		<?php include 'scripts/scriptLinks.php';?>
 	</body>
 
