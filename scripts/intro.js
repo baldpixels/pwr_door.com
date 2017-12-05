@@ -12,8 +12,6 @@ var logoDown = false;
 $(document).ready(function(){
 //local
 
-  $("#BG").hide();
-
   $("#topNav").hide();
   $("#bottomNav").hide();
 
@@ -52,26 +50,13 @@ $(document).ready(function(){
     }
     if(movieTime){
       if(logoUp){
-        //re-center logo
-        $("#logo").animate({"top":"+=200px"}, 1000, "swing");
-        logoUp = false;
-
-        $("#screen").fadeOut(500);
-        $("#movieTheater").fadeOut(500);
-        $("#topNav").fadeIn(1000);
-        $("#bottomNav").fadeIn(1000);
+        moveLogoDown();
       }
       movieTime = false;
     }
     if(graphics){
       if(logoDown){
-        //re-center logo
-        $("#logo").animate({"top":"-=200px"}, 1000, "swing");
-        logoDown = false;
-
-        $("#gallery").fadeOut(500);
-        $("#bottomNav").fadeIn(1000);
-        $("#topNav").fadeIn(1000);
+        moveLogoUp();
       }
       graphics = false;
     }
@@ -82,6 +67,27 @@ $(document).ready(function(){
       $("#topNav").fadeIn(500, function(){
         $("#bottomNav").fadeIn(500)
       });
+    }
+
+    function moveLogoDown(){
+      //re-center logo
+      $("#logo").animate({"top":"+=240px"}, 1000, "swing");
+      logoUp = false;
+
+      $("#screen1").fadeOut(500);
+      $("#movieTheater").fadeOut(500);
+      $("#topNav").fadeIn(1000);
+      $("#bottomNav").fadeIn(1000);
+    }
+
+    function moveLogoUp(){
+      //re-center logo
+      $("#logo").animate({"top":"-=240px"}, 1000, "swing");
+      logoDown = false;
+
+      $("#gallery").fadeOut(500);
+      $("#bottomNav").fadeIn(1000);
+      $("#topNav").fadeIn(1000);
     }
 
   function moviesClick(){

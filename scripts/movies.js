@@ -45,15 +45,27 @@ $(document).ready(function(){
     if(!logoUp){
       $("#topNav").fadeOut(1000);
       $("#bottomNav").fadeOut(1000);
+
       //slide logo up
-      $("#logo").animate({"top":"-=200px", "width":"280px"}, 1000, "swing");
+      $("#logo").animate({"top":"-=240px", "width":"220px"}, 1000, "swing");
       logoUp = true;
 
       $("#movieTheater").fadeIn(500);
-      $("#screen1").fadeIn(500);
-      $("#screen1").attr("src", movieLinks[currentSlide]);
+
+      //wait 5s for screen to drop
+      setTimeout(
+        function(){
+          $("#screen1").attr("src", movieLinks[currentSlide]);
+          $("#screen1").fadeIn(500);
+        }, 5000);
+
+      //wait 7s for intro gif to finish
+      setTimeout(
+        function(){
+          $("#movieTheater").css("background-image", "url('/pwrdoor.com/style/BG_images/theaterBG.gif')");
+        }, 7000);
+
     }
-    slider();
   }
 
     function slideLeft(){
