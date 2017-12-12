@@ -4,9 +4,21 @@
 $(document).ready(function(){
 //local
 
-$("#gallery").hide();
+  $("#gallery").hide();
+  $("#graphic").hide();
 
-  //vars
+  var graphicLinks = ["/pwrdoor.com/graphics/q_logo_01.png"
+  ];
+
+  var currentSlide = 0;
+
+  var xCursor;
+  var yCursor;
+
+  $("#graphic").mousemove(function( event ) {
+    var xCursor = event.pageX;
+    var yCursor = event.pageY;
+  });
 
   function graphicsCheck(){
     if(graphics){
@@ -17,10 +29,10 @@ $("#gallery").hide();
 
   function gallery(){
     if(!logoDown){
-      $("#bottomNav").fadeOut(1000);
-      $("#topNav").fadeOut(1000);
+      $("#navBG").fadeOut(1000);
+
       //slide logo down
-      $("#logo").animate({"top":"+=240px", "width":"220px"}, 1000, "swing");
+      $("#logo").animate({"top":"+=220px", "width":"280px"}, 1000, "swing");
       logoDown = true;
 
       $("#gallery").fadeIn(1000);
@@ -29,7 +41,9 @@ $("#gallery").hide();
       setTimeout(
         function(){
           //graphics go here
-        }, 5000);
+          $("#graphic").attr("src", graphicLinks[currentSlide]);
+          $("#graphic").fadeIn(500);
+        }, 1000);
 
       //wait 7s for intro gif to finish
       setTimeout(
@@ -37,6 +51,16 @@ $("#gallery").hide();
           $("#gallery").css("background-image", "url('/pwrdoor.com/style/BG_images/galleryBG.gif')");
         }, 7000);
     }
+    $("#debug").fadeIn(250);
+    $("#debug").html("test");
+
+    checkCursor();
+  }
+
+  function checkCursor(){
+    $("#debug").fadeIn(250);
+    $("#debug").html("x-coord: " + xCursor);
+    //$("#graphic").animate({"right":"+=150px"}, 500, "swing");
   }
 
 });

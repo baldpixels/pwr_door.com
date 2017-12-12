@@ -32,7 +32,7 @@ a {
 				transform: translate(-50%, -50%);
 			  width: 50%;
 			  	max-width: 375px;
-					min-width: 220px;
+					min-width: 280px;
 			}
 			#logo:hover {
 			}
@@ -42,12 +42,11 @@ a {
 				position: absolute;
 				width: 100%;
 				height: 100%;
-				background-image: url("BG_images/theater_intro.gif");
+				background-image: url("BG_images/theaterBG.gif");
 					background-position: center;
 					background-repeat: no-repeat;
 					background-attachment: fixed;
 					background-size: cover;
-				box-shadow: inset 0 0 0 3000px rgba(0,204,0,0.3);
 			}
 
 				#screen1, #screen2{
@@ -60,9 +59,11 @@ a {
 					height: 350px;
 						max-width: 650px;
 						min-width: 400px;
-					border: 0;
+					border: 10px;
+						border-radius: 10px;
+					box-shadow: inset 0 0 0 3000px rgba(0,204,0,0.2);
 					margin: 0;
-					padding: 10px;
+					padding: 40px;
 				}
 
 			#gallery{
@@ -70,13 +71,29 @@ a {
 				position: absolute;
 				width: 100%;
 				height: 100%;
-				background-image: url("BG_images/gallery_intro.gif");
+				background-image: url("BG_images/galleryBG.gif");
 					background-position: center;
 					background-repeat: no-repeat;
 					background-attachment: fixed;
 					background-size: cover;
-				box-shadow: inset 0 0 0 3000px rgba(0,204,0,0.2);
 			}
+
+				#graphic{
+					z-index: +1;
+					position: fixed;
+					top: 40%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					height: 35%;
+						max-height: 256px;
+					border: 30px;
+						border-radius: 5px;
+					box-shadow: inset 0 0 0 3000px rgba(0,204,0,0.3);
+					margin: 0;
+					padding: 20px;
+						padding-left: 2000px;
+						padding-right: 2000px;
+				}
 
 			#prev, #next{
 				z-index: +1;

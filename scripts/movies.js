@@ -4,11 +4,13 @@
 $(document).ready(function(){
 //local
 
+  var screenUp = true;
+
   var movieLinks = ["https://player.vimeo.com/video/214244680",
     "https://www.youtube.com/embed/H9aNt2pWA7s",
     "https://player.vimeo.com/video/177589535",
     "https://player.vimeo.com/video/173084329"
-    ];
+  ];
 
   $("#movieTheater").hide();
   $("#screen1").hide();
@@ -32,6 +34,20 @@ $(document).ready(function(){
     this.src = "images/next.png";
   });
 
+  //screen hover animations
+  $("#screen1").hover(function(){
+    if(!screenUp){
+      $("#screen1").animate({"top":"-=350px"}, 250, "swing");
+      screenUp = true;
+    }
+  });
+  $("#screen1").mouseleave(function(){
+    if(screenUp){
+      $("#screen1").animate({"top":"+=350px"}, 375, "swing");
+      screenUp = false;
+    }
+  });
+
   function moviesCheck(){
     if(movieTime){
       theater();
@@ -43,27 +59,26 @@ $(document).ready(function(){
 
   function theater(){
     if(!logoUp){
-      $("#topNav").fadeOut(1000);
-      $("#bottomNav").fadeOut(1000);
+      $("#navBG").fadeOut(1000);
 
       //slide logo up
-      $("#logo").animate({"top":"-=240px", "width":"220px"}, 1000, "swing");
+      $("#logo").animate({"top":"-=220px", "width":"280px"}, 1000, "swing");
       logoUp = true;
 
       $("#movieTheater").fadeIn(500);
 
-      //wait 5s for screen to drop
+      //wait 2s for screen to drop
       setTimeout(
         function(){
           $("#screen1").attr("src", movieLinks[currentSlide]);
           $("#screen1").fadeIn(500);
-        }, 5000);
 
-      //wait 7s for intro gif to finish
-      setTimeout(
-        function(){
-          $("#movieTheater").css("background-image", "url('/pwrdoor.com/style/BG_images/theaterBG.gif')");
-        }, 7000);
+          //initial screen down
+          if(screenUp){
+            $("#screen1").animate({"top":"+=350px"}, 500, "swing");
+            screenUp = false;
+          }
+        }, 1000);
 
     }
   }

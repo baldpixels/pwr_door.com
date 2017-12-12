@@ -2,6 +2,6 @@
 <!--comment-->
 <script src="scripts/clock.js"></script>
 <script src="scripts/u/controls.js"></script>
-<script src="scripts/intro.js"></script>
+<script src="scripts/home.js"></script>
 <script src="scripts/movies.js"></script>
 <script src="scripts/graphics.js"></script>

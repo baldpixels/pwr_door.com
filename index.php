@@ -32,7 +32,8 @@
 
 			<!--absolute position-->
 			<div id="gallery">
-
+				<!--fixed position-->
+				<img id="graphic" src="">
 			</div>
 
 			<img id="prev" src="images/prev.png">

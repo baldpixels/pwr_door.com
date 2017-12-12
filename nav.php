@@ -1,3 +1,7 @@
-<img id="topNav" src='images/movies.png'></img>
+<div id="navBG">
 
-<img id="bottomNav" src='images/graphics.png'></img>
+  <img id="topNav" src='images/movies.png'>
+
+  <img id="bottomNav" src='images/graphics.png'>
+
+</div>
