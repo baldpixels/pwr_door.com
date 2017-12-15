@@ -26,8 +26,7 @@
 			<!--absolute position-->
 			<div id="movieTheater">
 				<!--fixed position-->
-				<iframe id="screen1"></iframe>
-				<iframe id="screen2"></iframe>
+				<iframe id="screen"></iframe>
 			</div>
 
 			<!--absolute position-->

@@ -8,6 +8,7 @@ var graphics = false;
 
 var logoUp = false;
 var logoDown = false;
+var controlsUp = true;
 
 $(document).ready(function(){
 //local
@@ -15,6 +16,9 @@ $(document).ready(function(){
   $("#topNav").hide();
   $("#bottomNav").hide();
   $("#navBG").hide();
+
+  $("#prev").hide();
+  $("#next").hide();
 
   $("#debug").html("");
 
@@ -79,7 +83,9 @@ $(document).ready(function(){
       logoUp = false;
 
       $("#movieTheater").fadeOut(500);
-      $("#screen1").fadeOut(500);
+        $("#screen").fadeOut(500);
+        $("#next").fadeOut(500);
+        $("#prev").fadeOut(500);
       $("#navBG").fadeIn(500);
     }
 
@@ -89,7 +95,9 @@ $(document).ready(function(){
       logoDown = false;
 
       $("#gallery").fadeOut(500);
-      $("#graphics").fadeOut(500);
+        $("#graphics").fadeOut(500);
+        $("#next").fadeOut(500);
+        $("#prev").fadeOut(500);
       $("#navBG").fadeIn(500);
     }
 

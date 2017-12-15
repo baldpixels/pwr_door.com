@@ -4,7 +4,8 @@
 $(document).ready(function(){
 //local
 
-  var screenUp = true;
+  var currentMovie = 0;
+  var updateMovie = false;
 
   var movieLinks = ["https://player.vimeo.com/video/214244680",
     "https://www.youtube.com/embed/H9aNt2pWA7s",
@@ -13,41 +14,26 @@ $(document).ready(function(){
   ];
 
   $("#movieTheater").hide();
-  $("#screen1").hide();
-  $("#screen2").hide();
-  $("#prev").hide();
-  $("#next").hide();
+    $("#screen").hide();
 
+  //movie controls
   $("#prev").click(prevClick);
-  $("#prev").hover(function(){
-    this.src = "images/prev_hover.png";
-  });
-  $("#prev").mouseleave(function(){
-    this.src = "images/prev.png";
-  });
+    $("#prev").hover(function(){
+      this.src = "images/prev.png";
+    });
+    $("#prev").mouseleave(function(){
+      this.src = "images/prev.png";
+    });
 
   $("#next").click(nextClick);
-  $("#next").hover(function(){
-    this.src = "images/next_hover.png";
-  });
-  $("#next").mouseleave(function(){
-    this.src = "images/next.png";
-  });
+    $("#next").hover(function(){
+      this.src = "images/next.png";
+    });
+    $("#next").mouseleave(function(){
+      this.src = "images/next.png";
+    });
 
-  //screen hover animations
-  $("#screen1").hover(function(){
-    if(!screenUp){
-      $("#screen1").animate({"top":"-=350px"}, 250, "swing");
-      screenUp = true;
-    }
-  });
-  $("#screen1").mouseleave(function(){
-    if(screenUp){
-      $("#screen1").animate({"top":"+=350px"}, 375, "swing");
-      screenUp = false;
-    }
-  });
-
+  //timer for checking if its movieTime
   function moviesCheck(){
     if(movieTime){
       theater();
@@ -55,9 +41,9 @@ $(document).ready(function(){
   }
   setInterval(moviesCheck, 100);
 
-  var currentSlide = 0;
-
+  //main loop
   function theater(){
+    //theater intro
     if(!logoUp){
       $("#navBG").fadeOut(1000);
 
@@ -67,67 +53,55 @@ $(document).ready(function(){
 
       $("#movieTheater").fadeIn(500);
 
-      //wait 2s for screen to drop
+      //wait 1s for screen fadeIn
       setTimeout(
         function(){
-          $("#screen1").attr("src", movieLinks[currentSlide]);
-          $("#screen1").fadeIn(500);
-
-          //initial screen down
-          if(screenUp){
-            $("#screen1").animate({"top":"+=350px"}, 500, "swing");
-            screenUp = false;
-          }
+          $("#screen").attr("src", movieLinks[currentMovie]);
+          $("#screen").fadeIn(1000, function(){
+            $("#next").fadeIn(500);
+            $("#prev").fadeIn(500);
+            //relocate controls if needed
+            if(!controlsUp){
+              $("#next").animate({"top":"-=120px"}, 250, "swing")
+              $("#prev").animate({"top":"-=120px"}, 250, "swing")
+              controlsUp = true;
+            }
+          });
         }, 1000);
-
     }
+    //end intro
+
+    //update movie if slide changes
+    if(updateMovie){
+      $("#screen").attr("src", movieLinks[currentMovie]);
+      updateMovie = false;
+    }
+
+    //call drag functions and stuff here
   }
 
-    function slideLeft(){
-        if(currentSlide < movieLinks.length){
-          currentSlide++;
-          if(currentSlide%2 == 0){
-            $("#screen1").attr("src", movieLinks[currentSlide]);
-            $("#screen2").animate({"left":"-=1000px", "opacity":"0"}, 1000, "swing");
-            $("#screen1").animate({"left":"+=1000px"});
-            $("#screen1").fadeIn(500);
-            $("#screen1").animate({"left":"-=1000px"}, 1000, "swing");
-          }
-          else{
-            $("#screen2").attr("src", movieLinks[currentSlide]);
-            $("#screen1").animate({"left":"-=1000px", "opacity":"0"}, 1000, "swing");
-            $("#screen2").animate({"left":"+=1000px"});
-            $("#screen2").fadeIn(500);
-            $("#screen2").animate({"left":"-=1000px"}, 1000, "swing");
-          }
-        }
-    }
-
-    function slideRight(){
-       if(0 < currentSlide){
-          currentSlide--;
-          if(currentSlide%2 == 0){
-            $("#screen1").attr("src", movieLinks[currentSlide]);
-            $("#screen2").animate({"right":"-=1000px", "opacity":"0"}, 1000, "swing");
-            $("#screen1").animate({"right":"+=2000px"});
-            $("#screen1").fadeIn(500);
-            $("#screen1").animate({"right":"-=1000px"}, 1000, "swing");
-          }
-          else{
-            $("#screen2").attr("src", movieLinks[currentSlide]);
-            $("#screen1").animate({"right":"-=1000px", "opacity":"0"}, 1000, "swing");
-            $("#screen2").animate({"right":"+=1000px"});
-            $("#screen2").fadeIn(500);
-            $("#screen2").animate({"right":"-=1000px"}, 1000, "swing");
-          }
-        }
-    }
-
+      //previous button click action
       function prevClick(){
-        currentSlide--;
+        if(movieTime){
+          currentMovie--;
+          updateMovie = true;
+          //circle back
+          if(currentMovie == -1){
+            currentMovie = movieLinks.length - 1;
+          }
+        }
       }
+
+      //next button click action
       function nextClick(){
-        currentSlide++;
+        if(movieTime){
+          currentMovie++;
+          updateMovie = true;
+          //circle forward
+          if(currentMovie == movieLinks.length){
+            currentMovie = 0;
+          }
+        }
       }
 
 });
