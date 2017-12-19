@@ -3,8 +3,8 @@
 
 	<head>
 		<meta charset="UTF-8">
-		<?php include 'style/styleLinks.php';?>
-		<?php include 'style/fonts.php';?>
+		<?php include 'css/cssLinks.php';?>
+		<?php include 'css/fonts.php';?>
 
 		<link rel="icon" href="images/logo.png">
 
@@ -14,35 +14,12 @@
 	</head>
 
 	<body>
-		<!--absolute position-->
-		<div id="wrapper">
 
-			<!--fixed position-->
-			<img id="logo" src="images/logo.png" alt="pwrdoor.com"/>
+		<img id="logo" src="images/logo.png" alt="pwrdoor.com"/>
 
-			<!--fixed position-->
-			<?php include 'nav.php';?>
+		<div id="homeBG"></div>
 
-			<!--absolute position-->
-			<div id="movieTheater">
-				<!--fixed position-->
-				<iframe id="screen"></iframe>
-			</div>
-
-			<!--absolute position-->
-			<div id="gallery">
-				<!--fixed position-->
-				<img id="graphic" src="">
-			</div>
-
-			<img id="prev" src="images/prev.png">
-			<img id="next" src="images/next.png">
-
-			<div id="debug"></div>
-
-		</div>
-
-		<?php include 'scripts/scriptLinks.php';?>
+		<?php include 'js/jsLinks.php';?>
 	</body>
 
 </html>
